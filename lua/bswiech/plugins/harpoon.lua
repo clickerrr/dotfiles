@@ -6,6 +6,8 @@ return {
 	config = function()
 		local harpoon = require("harpoon")
 
+		print("Haha im changing the setup here")
+
 		harpoon:setup()
 		local function map(lhs, rhs, opts)
 			vim.keymap.set("n", lhs, rhs, opts or {})
