@@ -6,7 +6,7 @@ return {
 	config = function()
 		local harpoon = require("harpoon")
 
-		print("We are testing this different main branch new branch")
+		print("Hello world from testing branch")
 
 		harpoon:setup()
 		local function map(lhs, rhs, opts)
