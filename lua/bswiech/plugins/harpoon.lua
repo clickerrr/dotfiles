@@ -6,9 +6,6 @@ return {
 	config = function()
 		local harpoon = require("harpoon")
 
-		print("Hello world from testing branch")
-		print("now we areWe are testing this different main branch new branch")
-
 		harpoon:setup()
 		local function map(lhs, rhs, opts)
 			vim.keymap.set("n", lhs, rhs, opts or {})
