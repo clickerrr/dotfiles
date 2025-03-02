@@ -107,30 +107,9 @@ return {
 					filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
 				})
 			end,
-
-			["eslint"] = function()
-				-- configure eslint server
-				lspconfig["eslint"].setup({
-					capabilities = capabilities,
-					root_dir = require("lspconfig.util").root_pattern("package.json", ".git", ".eslintrc"), -- root search for package.json or .eslintrc
-					settings = {
-						workingDirectory = { mode = "location" },
-					},
-					on_attach = function(client, bufnr)
-						-- Enable auto-fixing on save (optional)
-						if client.server_capabilities.documentFormattingProvider then
-							vim.api.nvim_create_autocmd("BufWritePre", {
-								buffer = bufnr,
-								command = "EslintFixAll",
-							})
-						end
-					end,
-				})
-			end,
-
-			["ts_ls"] = function()
+			["emmet_ls"] = function()
 				-- configure emmet language server
-				lspconfig["ts_ls"].setup({
+				lspconfig["emmet_ls"].setup({
 					capabilities = capabilities,
 					filetypes = {
 						"html",
@@ -142,10 +121,37 @@ return {
 						"less",
 						"svelte",
 					},
-					root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"), -- root search for tsconfig.json or package.json
 				})
 			end,
-
+			["eslint"] = function()
+				lspconfig["eslint"].setup({
+					capabilities = capabilities,
+					root_dir = lspconfig.util.root_pattern("eslint.config.js", ".eslintrc*", "package.json", ".git"),
+					settings = {
+						workingDirectory = { mode = "location" },
+					},
+					on_attach = function(client, bufnr)
+						-- Enable auto-fixing on save
+						if client.server_capabilities.documentFormattingProvider then
+							vim.api.nvim_create_autocmd("BufWritePre", {
+								buffer = bufnr,
+								command = "EslintFixAll",
+							})
+						end
+					end,
+				})
+			end,
+			["ts_ls"] = function()
+				lspconfig["ts_ls"].setup({
+					capabilities = capabilities,
+					root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+					settings = {
+						diagnostics = {
+							ignoredCodes = { 6133, 6196 }, -- Example: Ignore specific TypeScript errors if needed
+						},
+					},
+				})
+			end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({

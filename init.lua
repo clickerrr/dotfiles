@@ -1,3 +1,2 @@
-require("bswiech")
+require("bswiech.core")
 require("bswiech.lazy")
-print("Hello World")
