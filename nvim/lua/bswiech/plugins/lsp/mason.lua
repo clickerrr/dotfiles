@@ -36,6 +36,7 @@ return {
 				"emmet_ls",
 				"prismals",
 				"pyright",
+				"ts_ls",
 			},
 			automatic_installation = true,
 		})
@@ -49,6 +50,7 @@ return {
 				"pylint",
 				"eslint_d",
 			},
+			run_on_start = true,
 		})
 	end,
 }
