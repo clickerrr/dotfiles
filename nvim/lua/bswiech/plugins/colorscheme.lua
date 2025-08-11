@@ -7,7 +7,9 @@ return {
 		require("catppuccin").setup({
 			flavour = "macchiato", -- latte, frappe, macchiato, mocha
 			transparent_background = false,
+			auto_integrations = true,
 			integrations = {
+				cmp = true,
 				nvimtree = true,
 				treesitter = true,
 				lsp_saga = true,
