@@ -18,7 +18,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 20
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'tiles'
+default-root-container-layout = 'accordion'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
@@ -36,7 +36,7 @@ on-focus-changed = "move-mouse window-lazy-center"
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -222,3 +222,47 @@ run = "move-node-to-workspace 1"
 [[on-window-detected]]
 if.app-id ="com.apple.ActivityMonitor"
 run = 'layout floating'    
+
+[[on-window-detected]]
+if.app-id ="com.apple.finder"
+run = 'layout floating'    
+
+[[on-window-detected]]
+if.app-id ="com.apple.QuickTimePlayerX"
+run = 'layout floating'    
+
+[[on-window-detected]]
+if.app-id ="com.apple.FaceTime"
+run = [ 'layout floating'  ]    
+
+[[on-window-detected]]
+if.app-id ="com.microsoft.autoupdate2"
+run = 'layout floating'    
+
+[[on-window-detected]]
+if.app-id ="eu.exelban.Stats"
+run = 'layout floating'    
+
+[[on-window-detected]]
+if.app-id ="com.apple.UserNotificationCenter"
+run = 'layout floating'    
+
+[[on-window-detected]]
+if.app-id ="com.adobe.acc.AdobeCreativeCloud"
+run = 'layout floating'    
+
+[[on-window-detected]]
+if.app-id ="com.apple.Preview"
+run = 'layout floating'    
+
+[[on-window-detected]]
+if.app-id ="com.lemon.lvoverseas"
+run = 'move-node-to-workspace 4'    
+
+[[on-window-detected]]
+if.app-id ="com.blackmagic-design.DaVinciResolveLite"
+run = 'move-node-to-workspace 4'    
+
+[[on-window-detected]]
+if.app-id ="com.adobe.LightroomClassicCC7"
+run = [ 'layout floating','move-node-to-workspace 4'  ]    

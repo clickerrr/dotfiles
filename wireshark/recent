@@ -95,11 +95,11 @@ gui.show_bytes_show: ASCII
 
 # Main window upper (or leftmost) pane size.
 # Decimal number.
-gui.geometry_main_upper_pane: 459
+gui.geometry_main_upper_pane: 236
 
 # Main window middle pane size.
 # Decimal number.
-gui.geometry_main_lower_pane: 895
+gui.geometry_main_lower_pane: 316
 
 # Main window master splitter state.
 # Hex byte string.
