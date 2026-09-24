@@ -12,7 +12,13 @@ keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement Number" })
 
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
+keymap.set("n", "<leader>sd", "<C-w>K", { desc = "Move window to top vertical" })
+keymap.set("n", "<leader>sl", "<C-w>H", { desc = "Move window to left horizontal" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
+keymap.set("n", "<leader>s>", "5<C-w><", { desc = "Resize split right" })
+keymap.set("n", "<leader>s<", "5<C-w>>", { desc = "Resize split left" })
+keymap.set("n", "<leader>s+", "5<C-w>+", { desc = "Resize split up" })
+keymap.set("n", "<leader>s-", "5<C-w>-", { desc = "Resize split down" })
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab

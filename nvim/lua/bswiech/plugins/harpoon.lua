@@ -11,7 +11,7 @@ return {
 			vim.keymap.set("n", lhs, rhs, opts or {})
 		end
 		map("<leader>a", function()
-			harpoon:list():add()
+			harpoon:list():prepend()
 		end)
 		map("<leader>h", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -27,6 +27,9 @@ return {
 		end)
 		map("<leader><c-l>", function()
 			harpoon:list():select(4)
+		end)
+		map("<leader>hc", function()
+			harpoon:list():clear()
 		end)
 	end,
 }

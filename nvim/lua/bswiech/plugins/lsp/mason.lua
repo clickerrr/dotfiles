@@ -37,6 +37,7 @@ return {
 				"prismals",
 				"pyright",
 				"ts_ls",
+				"clangd",
 			},
 			automatic_installation = true,
 		})
@@ -49,6 +50,7 @@ return {
 				"black", -- python formatter
 				"pylint",
 				"eslint_d",
+				"clang-format",
 			},
 			run_on_start = true,
 		})
